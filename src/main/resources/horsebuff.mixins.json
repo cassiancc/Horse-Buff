@@ -15,7 +15,6 @@
     "Server.StepHeight"
   ],
   "client": [
-    "Client.InventoryAccessor",
     "Client.HeadPitchOffset",
     "Client.HorseRenderer",
     "Client.JebHorseTintable",
