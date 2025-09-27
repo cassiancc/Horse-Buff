@@ -48,6 +48,6 @@
   "text.autoconfig.HorseBuff.option.jeb_Horses.@Tooltip": "Как и овцы, лошади станут переливаться цветами, если названы «jeb_».",
 
 
-  "text.HorseBuff.keybinding.category": "Улучшения лошадей",
+  "key.category.horsebuff.keybinding": "Улучшения лошадей",
   "text.HorseBuff.keybinding.horsePlayerInventory": "Открыть инвентарь на лошади"
 }

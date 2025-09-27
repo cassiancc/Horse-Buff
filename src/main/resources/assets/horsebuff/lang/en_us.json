@@ -48,6 +48,6 @@
   "text.autoconfig.HorseBuff.option.jeb_Horses.@Tooltip": "Like sheep, horses will become RGB when named \"jeb\"",
 
 
-  "text.HorseBuff.keybinding.category": "Horse Buff",
+  "key.category.horsebuff.keybinding": "Horse Buff",
   "text.HorseBuff.keybinding.horsePlayerInventory": "Open Inventory on Horse"
 }

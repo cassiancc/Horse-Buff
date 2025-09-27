@@ -9,7 +9,7 @@ import net.minecraft.client.render.entity.state.LlamaEntityRenderState;
 
 public class RenderUtils {
     public static boolean isJeb(LivingEntityRenderState entityRenderState) {
-        return ModConfig.getInstance().jeb_Horses && entityRenderState.customName != null && "jeb_".equals(entityRenderState.customName.getString());
+        return ModConfig.getInstance().jeb_Horses && entityRenderState.displayName != null && "jeb_".equals(entityRenderState.displayName.getString());
     }
 
     public static int getAlpha(boolean isPlayerPassenger) {

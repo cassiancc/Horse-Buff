@@ -4,6 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.util.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 public class ClientInit implements ClientModInitializer {
@@ -11,7 +12,7 @@ public class ClientInit implements ClientModInitializer {
             "text.HorseBuff.keybinding.horsePlayerInventory",
             InputUtil.Type.KEYSYM,
             GLFW.GLFW_KEY_LEFT_ALT,
-            "text.HorseBuff.keybinding.category"
+            KeyBinding.Category.create(Identifier.of("horsebuff", "keybinding"))
     ));
 
     @Override

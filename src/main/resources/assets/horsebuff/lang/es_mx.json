@@ -45,6 +45,6 @@
   "text.autoconfig.HorseBuff.option.jeb_Horses": "Caballos jeb_",
   "text.autoconfig.HorseBuff.option.jeb_Horses.@Tooltip": "Al igual que las ovejas, los caballos se vuelven RGB cuando se les pone el nombre \"jeb\"",
 
-  "text.HorseBuff.keybinding.category": "Horse Buff",
+  "key.category.horsebuff.keybinding": "Horse Buff",
   "text.HorseBuff.keybinding.horsePlayerInventory": "Abrir Inventario desde el Caballo"
 }

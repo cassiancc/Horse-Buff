@@ -5,21 +5,15 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "Server.AllowRaft",
-    "Server.MountedModifiers",
+    "Server.StartModifiers",
+    "Server.EndModifiers",
     "Server.NoBuck",
     "Server.NoWander"
   ],
   "client": [
     "Client.HeadPitchOffset",
     "Client.InventoryAccessor",
-    "Client.JebHorseTintable",
-    "Client.LivingEntityRendererMixin",
-    "Client.LlamaDecorFeatureRendererMixin",
-    "Client.RideableEquippableEntityModelMixin",
-    "Client.RideableEntityRenderStateMixin",
-    "Client.Swim",
-    "Client.TransparentEquipment",
-    "Client.TransparentHorseMarkings"
+    "Client.Swim"
   ],
   "injectors": {
     "defaultRequire": 1
