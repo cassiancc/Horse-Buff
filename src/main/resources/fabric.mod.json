@@ -20,9 +20,6 @@
     ],
     "client": [
       "net.F53.HorseBuff.ClientInit"
-    ],
-    "modmenu": [
-      "net.F53.HorseBuff.config.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -30,10 +27,9 @@
   ],
   "depends": {
     "fabricloader": ">=0.15.11",
-    "minecraft": ">=1.21.4",
+    "minecraft": ">26",
     "java": ">=21",
-    "fabric-api": "*",
-    "cloth-config": "*"
+    "fabric-api": "*"
   },
   "suggests": {
     "modmenu": "*"

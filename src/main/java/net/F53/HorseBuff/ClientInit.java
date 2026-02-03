@@ -1,18 +1,18 @@
 package net.F53.HorseBuff;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
-import net.minecraft.util.Identifier;
+import net.fabricmc.fabric.api.client.keymapping.v1.KeyMappingHelper;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.resources.Identifier;
 import org.lwjgl.glfw.GLFW;
 
 public class ClientInit implements ClientModInitializer {
-    public static KeyBinding horsePlayerInventory = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+    public static KeyMapping horsePlayerInventory = KeyMappingHelper.registerKeyMapping(new KeyMapping(
             "text.HorseBuff.keybinding.horsePlayerInventory",
-            InputUtil.Type.KEYSYM,
+            InputConstants.Type.KEYSYM,
             GLFW.GLFW_KEY_LEFT_ALT,
-            KeyBinding.Category.create(Identifier.of("horsebuff", "keybinding"))
+            KeyMapping.Category.register(Identifier.fromNamespaceAndPath("horsebuff", "keybinding"))
     ));
 
     @Override

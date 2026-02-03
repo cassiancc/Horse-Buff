@@ -4,16 +4,15 @@
   "package": "net.F53.HorseBuff.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "Server.AllowRaft",
-    "Server.StartModifiers",
-    "Server.EndModifiers",
-    "Server.NoBuck",
-    "Server.NoWander"
+    "server.AllowRaft",
+    "server.StartModifiers",
+    "server.EndModifiers",
+    "server.NoBuck",
+    "server.NoWander"
   ],
   "client": [
-    "Client.HeadPitchOffset",
-    "Client.InventoryAccessor",
-    "Client.Swim"
+    "client.HeadPitchOffset",
+    "client.InventoryAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

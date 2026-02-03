@@ -6,11 +6,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class HorseBuffInit implements ModInitializer {
+    public static final String MOD_ID = "horsebuff";
     public static final Logger LOGGER = LogManager.getLogger("HorseBuff");
+    public static final ModConfig CONFIG = ModConfig.init();
 
     @Override
     public void onInitialize() {
         LOGGER.info("Horse Buff Initialized");
-        ModConfig.init();
     }
 }

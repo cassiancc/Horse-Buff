@@ -1,13 +1,13 @@
-package net.F53.HorseBuff.mixin.Client;
+package net.F53.HorseBuff.mixin.client;
 
 import net.F53.HorseBuff.render.entity.model.ExtendedRideableEquippableEntityModel;
-import net.minecraft.client.render.entity.model.HorseEntityModel;
-import net.minecraft.client.render.entity.model.LlamaEntityModel;
+import net.minecraft.client.model.animal.equine.HorseModel;
+import net.minecraft.client.model.animal.llama.LlamaModel;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 
 // Horses can equip armor and llamas can equip carpets
-@Mixin(value = {HorseEntityModel.class, LlamaEntityModel.class}, priority = 960)
+@Mixin(value = {HorseModel.class, LlamaModel.class}, priority = 960)
 public abstract class RideableEquippableEntityModelMixin implements ExtendedRideableEquippableEntityModel {
 
     @Unique

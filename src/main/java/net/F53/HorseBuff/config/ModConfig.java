@@ -1,78 +1,48 @@
 package net.F53.HorseBuff.config;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.ConfigData;
-import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+
+import folk.sisby.kaleido.api.WrappedConfig;
+import folk.sisby.kaleido.lib.quiltconfig.api.annotations.IntegerRange;
+import net.F53.HorseBuff.HorseBuffInit;
+import net.fabricmc.loader.api.FabricLoader;
+
+public class ModConfig extends WrappedConfig {
+
+    public ClientConfig client = new ClientConfig();
+    public static class ClientConfig implements Section {
+        public boolean noBuck = true;
+        @IntegerRange(min = 0, max = 45)
+        public int horseHeadAngleOffset = 0;
+        public boolean jeb_Horses = true;
+    }
+
+    public ServerConfig server = new ServerConfig();
+    public static class ServerConfig implements Section {
+        public boolean stepHeight = true;
+        public boolean noWander = true;
+        public boolean breakSpeed = true;
+    }
 
 
-@SuppressWarnings("CanBeFinal")
-@Config(name = "HorseBuff")
-public class ModConfig implements ConfigData{
-    @ConfigEntry.Category("Server")
-    @ConfigEntry.Gui.Tooltip
-    public boolean noWander = true;
-
-    @ConfigEntry.Category("Server")
-    @ConfigEntry.Gui.Tooltip
-    public boolean breakSpeed = true;
-
-    @ConfigEntry.Category("Server")
-    @ConfigEntry.Gui.Tooltip
-    public boolean stepHeight = true;
-
-    @ConfigEntry.Category("Client")
-    @ConfigEntry.Gui.Tooltip
-    public boolean noBuck = true;
-
-    @ConfigEntry.Category("Client")
-    @ConfigEntry.Gui.Tooltip
-    public boolean swimHorse = true;
-
-    @ConfigEntry.Category("Client")
-    @ConfigEntry.Gui.Tooltip
-    public boolean swimCamel = false;
-
-    @ConfigEntry.Category("Client")
-    @ConfigEntry.Gui.Tooltip
-    public boolean swimDead = false;
-
-    @ConfigEntry.Category("Client")
-    @ConfigEntry.Gui.Tooltip
-    @ConfigEntry.Gui.CollapsibleObject
     public FadeConfig pitchFade = new FadeConfig();
-
-    public static class FadeConfig {
+    public static class FadeConfig implements Section {
         public boolean enabled = true;
 
-        @ConfigEntry.Gui.Tooltip
-        @ConfigEntry.BoundedDiscrete(min = 0, max = 90)
+        @IntegerRange(min = 0, max = 90)
         public int startAngle = 30;
-
-        @ConfigEntry.Gui.Tooltip
-        @ConfigEntry.BoundedDiscrete(min = 0, max = 90)
+        
+        @IntegerRange(min = 0, max = 90)
         public int endAngle = 50;
-
-        @ConfigEntry.Gui.Tooltip
-        @ConfigEntry.BoundedDiscrete(min = 50, max = 100)
+        
+        @IntegerRange(min = 50, max = 100)
         public int maxTransparency = 90;
     }
 
-    @ConfigEntry.Category("Client")
-    @ConfigEntry.Gui.Tooltip
-    @ConfigEntry.BoundedDiscrete(min = 0, max = 45)
-    public int horseHeadAngleOffset = 0;
-
-    @ConfigEntry.Category("Client")
-    @ConfigEntry.Gui.Tooltip
-    public boolean jeb_Horses = true;
-
-    public static void init() {
-        AutoConfig.register(ModConfig.class, Toml4jConfigSerializer::new);
+    public static ModConfig init() {
+        return ModConfig.createToml(FabricLoader.getInstance().getConfigDir(), "", HorseBuffInit.MOD_ID, ModConfig.class);
     }
 
     public static ModConfig getInstance() {
-        return AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        return HorseBuffInit.CONFIG;
     }
 }
